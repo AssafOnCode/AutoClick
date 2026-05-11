@@ -1,0 +1,189 @@
+/* Connexion — palette AutoClick (corail + anthracite), esprit concession automobile */
+
+:root {
+  --coral: #f05454;
+  --coral-dark: #d63d3d;
+  --coral-soft: rgba(240, 84, 84, 0.14);
+  --charcoal: #2d2d2d;
+  --text: #2d2d2d;
+  --text-muted: #6b7280;
+  --bg-page: #f0f2f5;
+  --bg-card: #ffffff;
+  --border: #e2e5ea;
+  --radius: 18px;
+  --radius-sm: 10px;
+  --shadow: 0 4px 24px rgba(45, 45, 45, 0.08), 0 1px 3px rgba(45, 45, 45, 0.06);
+  --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.auth-page {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  color: var(--text);
+  background-color: var(--bg-page);
+  background-image:
+    linear-gradient(105deg, rgba(240, 84, 84, 0.06) 0%, transparent 42%),
+    linear-gradient(180deg, #fafbfc 0%, var(--bg-page) 35%, var(--bg-page) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.auth-layout {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-brand {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.auth-logo-img {
+  display: block;
+  max-width: min(220px, 88vw);
+  height: auto;
+  margin: 0 auto;
+}
+
+.auth-brand-tagline {
+  margin: 1rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.auth-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2rem 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.auth-card h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
+}
+
+.auth-subtitle {
+  margin: 0 0 1.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+  color: var(--charcoal);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.88rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: #fafbfc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.form-group input:hover {
+  border-color: #cfd4db;
+  background: #fff;
+}
+
+.form-group input:focus {
+  border-color: var(--coral);
+  box-shadow: 0 0 0 3px var(--coral-soft);
+  background: #fff;
+}
+
+.auth-submit {
+  margin-top: 0.35rem;
+  padding: 0.95rem 1.25rem;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--coral) 0%, var(--coral-dark) 100%);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 4px 14px rgba(240, 84, 84, 0.38);
+}
+
+.auth-submit:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(240, 84, 84, 0.42);
+}
+
+.auth-submit:active {
+  transform: translateY(0);
+}
+
+.auth-footer {
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.auth-footer a {
+  color: var(--coral);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  color: var(--coral-dark);
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1.5rem 1.35rem 1.35rem;
+  }
+
+  .auth-card h1 {
+    font-size: 1.35rem;
+  }
+}
