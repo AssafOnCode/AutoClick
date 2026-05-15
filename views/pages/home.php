@@ -6,6 +6,19 @@
     <title>AutoClick — Achat & vente de véhicules</title>
     <link rel="stylesheet" href="../css/home.css">
 </head>
+<?php
+session_start();
+$first_name = $_SESSION['first_name'];
+$last_name = $_SESSION['last_name'];
+$number = $_SESSION['number'];
+$email = $_SESSION['email'];
+$password = $_SESSION['password'];
+$type = $_SESSION['type'];
+$photo = $_SESSION['photo'];
+
+?>
+
+
 <body class="home-page">
 
     <header class="site-header">
@@ -23,13 +36,13 @@
                 <ul class="main-nav__list">
                     <li>
                         <a href="vehiculesoccasions.php">
-                            <svg class="main-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 17h2l1-4h8l1 4h2M8 17v2a1 1 0 001 1h6a1 1 0 001-1v-2M4 11l2-5h12l2 5"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg>
+                            <svg class="main-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                             Occasions
                         </a>
                     </li>
                     <li>
                         <a href="vehiculesneufs.php">
-                            <svg class="main-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            <svg class="main-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05"/><path d="M12 22.08V12"/></svg>
                             Véhicules neufs
                         </a>
                     </li>
@@ -41,13 +54,13 @@
                     </li>
                     <li>
                         <a href="vendre.php">
-                            <svg class="main-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 1v3M6.34 4.93l2.12 2.12M4 12H1M6.34 19.07l2.12-2.12M12 20v3M17.66 19.07l-2.12-2.12M23 12h-3M17.66 4.93l-2.12 2.12"/><circle cx="12" cy="12" r="4"/></svg>
+                            <svg class="main-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.82 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg>
                             Vendre un véhicule
                         </a>
                     </li>
                     <li>
                         <a href="location.php">
-                            <svg class="main-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6"/></svg>
+                            <svg class="main-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="3.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
                             Location
                         </a>
                     </li>
@@ -59,7 +72,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                 </a>
                 <a class="profile-block" href="profil.php" aria-label="Mon profil">
-                    <span class="profile-block__avatar" aria-hidden="true">AC</span>
+                    <img class="profile-block__avatar" src="../../uploads/<?php echo $photo; ?>" alt="Photo de profil" width="38" height="38" loading="lazy" decoding="async">
                     <span class="profile-block__text">
                         <span class="profile-block__label">Profil</span>
                         <span class="profile-block__name">Mon compte</span>
@@ -72,11 +85,37 @@
     <main>
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero__card">
+                <div class="hero__bg-image" aria-hidden="true">
+                    <img src="../../assets/firstautoclick.jpg" alt="" width="1600" height="900" loading="eager" decoding="async">
+                </div>
+                <div class="hero__overlay" aria-hidden="true"></div>
                 <div class="hero__bg-pattern" aria-hidden="true"></div>
                 <div class="hero__content">
                     <p class="hero__badge">Concession & particuliers</p>
                     <h1 id="hero-title">Trouvez la voiture qui vous correspond</h1>
                     <p class="hero__lead">Occasions certifiées, neufs, électriques et solutions de location — tout AutoClick pour acheter, vendre ou louer en toute confiance.</p>
+                    <form class="hero-search" action="vehiculesoccasions.php" method="get" role="search" aria-label="Rechercher un véhicule">
+                        <div class="hero-search__row">
+                            <div class="hero-search__field hero-search__field--query">
+                                <label class="sr-only" for="hero-search-q">Marque, modèle ou mots-clés</label>
+                                <span class="hero-search__icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+                                </span>
+                                <input type="search" id="hero-search-q" name="q" placeholder="Marque, modèle, mots-clés…" autocomplete="off" enterkeyhint="search">
+                            </div>
+                            <div class="hero-search__field hero-search__field--select">
+                                <label class="sr-only" for="hero-search-scope">Type d’offre</label>
+                                <select id="hero-search-scope" name="scope">
+                                    <option value="" selected>Toutes les offres</option>
+                                    <option value="occasion">Véhicules d’occasion</option>
+                                    <option value="neuf">Véhicules neufs</option>
+                                    <option value="electrique">Électrique & hybride</option>
+                                    <option value="location">Location</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="hero-search__submit">Rechercher</button>
+                        </div>
+                    </form>
                     <div class="hero__ctas">
                         <a class="btn btn--primary" href="vehiculesoccasions.php">Voir les annonces</a>
                         <a class="btn btn--ghost" href="vendre.php">Estimer mon véhicule</a>
@@ -106,7 +145,7 @@
             <div class="services__grid">
                 <a class="service-card" id="occasion" href="vehiculesoccasions.php">
                     <div class="service-card__icon" aria-hidden="true">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h2l1-4h8l1 4h2M8 17v2a1 1 0 001 1h6a1 1 0 001-1v-2M4 11l2-5h12l2 5"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                     </div>
                     <h2>Véhicules d’occasion</h2>
                     <p>Berlines, SUV, citadines — stock contrôlé, historique transparent et garanties adaptées.</p>
@@ -115,7 +154,7 @@
 
                 <a class="service-card service-card--new" id="neufs" href="vehiculesneufs.php">
                     <div class="service-card__icon" aria-hidden="true">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05"/><path d="M12 22.08V12"/></svg>
                     </div>
                     <h2>Véhicules neufs</h2>
                     <p>Configurations sur mesure, aides à la reprise et livraison dans notre réseau partenaire.</p>
@@ -133,7 +172,7 @@
 
                 <a class="service-card service-card--sell" id="vendre" href="vendre.php">
                     <div class="service-card__icon" aria-hidden="true">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v3M6.34 4.93l2.12 2.12M4 12H1M6.34 19.07l2.12-2.12M12 20v3M17.66 19.07l-2.12-2.12M23 12h-3M17.66 4.93l-2.12 2.12"/><circle cx="12" cy="12" r="4"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.82 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg>
                     </div>
                     <h2>Vendre mon véhicule</h2>
                     <p>Estimation en ligne, reprise express ou mise en vente sur la plateforme — vous choisissez.</p>
@@ -142,7 +181,7 @@
 
                 <a class="service-card service-card--rent" id="location" href="location.php">
                     <div class="service-card__icon" aria-hidden="true">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="3.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
                     </div>
                     <h2>Location de véhicules</h2>
                     <p>LLD, LOA ou courte durée : solutions pros et particuliers avec kilométrage flexible.</p>
@@ -151,7 +190,7 @@
 
                 <a class="service-card" id="favoris" href="favoris.php">
                     <div class="service-card__icon" aria-hidden="true">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
                     </div>
                     <h2>Mes favoris</h2>
                     <p>Retrouvez les annonces sauvegardées et comparez vos coups de cœur en un clin d’œil.</p>

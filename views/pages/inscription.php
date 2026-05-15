@@ -20,7 +20,7 @@
             <h1>Inscription</h1>
             <p class="auth-subtitle">Remplissez le formulaire pour créer votre compte.</p>
 
-            <form class="auth-form" action="../../controllers/inscription-controller.php" method="POST" autocomplete="on">
+            <form class="auth-form" action="../../controllers/inscription-controller.php" method="POST" enctype="multipart/form-data" autocomplete="on">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstname">Prénom</label>
@@ -51,9 +51,13 @@
                         <option value="particulier">Particulier</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="image">Photo</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                </div>
                 <input class="auth-submit" type="submit" value="S'inscrire">
             </form>
-
+            
             <p class="auth-footer">Déjà inscrit ? <a href="connexion.php">Se connecter</a></p>
         </main>
     </div>
