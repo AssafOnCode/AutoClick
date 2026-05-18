@@ -18,10 +18,9 @@ if(isset($user['email']) && isset($user['password']))
         $_SESSION['last_name'] = $user['last_name'];
         $_SESSION['number'] = $user['number'];
         $_SESSION['type'] = $user['type'];
-        $_SESSION['id'] = $user['id'];
+        $_SESSION['id'] = $user['id_user'];
         $_SESSION['photo'] = $user['photo'];
-        var_dump($_SESSION); exit;
-
+        
        header('Location: ../views/pages/home.php');
        
     } else {
