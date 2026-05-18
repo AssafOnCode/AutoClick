@@ -1,0 +1,321 @@
+/* Zone centrale — page profil (navbar/footer via home.css) */
+
+.profil-hub-main {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 2.25rem 1.25rem 3rem;
+}
+
+.profil-hub {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 1.75rem 1.5rem 1.85rem;
+}
+
+.profil-hub__title {
+  margin: 0 0 0.4rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
+}
+
+.profil-hub__lead {
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.profil-hub__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.profil-hub__list li {
+  margin: 0;
+}
+
+/* Boutons-liens modernes — restent des liens (<a>) pour l’accessibilité et la navigation */
+.profil-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.65rem 1.15rem;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.profil-btn:hover {
+  transform: translateY(-1px);
+}
+
+.profil-btn:active {
+  transform: translateY(0);
+}
+
+.profil-btn:focus-visible {
+  outline: none;
+}
+
+/* Modifier — style clair (rose danger, comme avant sur « Supprimer ») */
+.profil-btn--danger {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: rgba(185, 28, 28, 0.25);
+  font-weight: 600;
+}
+
+.profil-btn--danger:hover {
+  background: #fee2e2;
+  border-color: rgba(185, 28, 28, 0.4);
+}
+
+.profil-btn--danger:focus-visible {
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.2);
+}
+
+/* Supprimer — corail AutoClick (comme avant sur « Modifier ») */
+.profil-btn--primary {
+  color: #fff;
+  background: linear-gradient(180deg, var(--coral) 0%, var(--coral-dark) 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(240, 84, 84, 0.32);
+}
+
+.profil-btn--primary:hover {
+  box-shadow: 0 8px 24px rgba(240, 84, 84, 0.38);
+}
+
+.profil-btn--primary:focus-visible {
+  box-shadow: 0 0 0 3px var(--coral-soft);
+}
+
+.profil-btn--ghost {
+  color: var(--text-muted);
+  background: #fafbfc;
+  border-color: var(--border);
+  font-weight: 600;
+}
+
+.profil-btn--ghost:hover {
+  color: var(--charcoal);
+  background: #fff;
+  border-color: #d1d5db;
+}
+
+.profil-btn--ghost:focus-visible {
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.25);
+}
+
+.profil-main {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.profil-alert {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.profil-alert--ok {
+  background: rgba(13, 148, 136, 0.12);
+  color: #0f766e;
+  border: 1px solid rgba(13, 148, 136, 0.35);
+}
+
+.profil-alert--err {
+  background: var(--coral-soft);
+  color: var(--coral-dark);
+  border: 1px solid rgba(240, 84, 84, 0.35);
+}
+
+.profil-panel {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.profil-panel__intro {
+  margin: 0 0 1.5rem;
+}
+
+.profil-panel__title {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
+}
+
+.profil-panel__lead {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.profil-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.profil-avatar-placeholder {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--coral-dark);
+  background: var(--coral-soft);
+  border: 3px solid var(--border);
+  box-shadow: 0 4px 16px rgba(26, 26, 30, 0.08);
+}
+
+
+.profil-avatar-row__hint {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  max-width: 16rem;
+  line-height: 1.45;
+}
+
+.profil-form .form-row {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 560px) {
+  .profil-form .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.profil-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.profil-form .form-group label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.35rem;
+}
+
+.profil-form .form-group input,
+.profil-form .form-group select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fafbfc;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.profil-form .form-group input:focus,
+.profil-form .form-group select:focus {
+  outline: none;
+  border-color: rgba(240, 84, 84, 0.45);
+  box-shadow: 0 0 0 3px var(--coral-soft);
+  background: #fff;
+}
+
+.profil-form .form-group input[type="file"] {
+  padding: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.profil-form .form-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.profil-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.profil-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, var(--coral) 0%, var(--coral-dark) 100%);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(240, 84, 84, 0.35);
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.profil-submit:hover {
+  box-shadow: 0 6px 22px rgba(240, 84, 84, 0.42);
+}
+
+.profil-submit:active {
+  transform: scale(0.98);
+}
+
+.profil-actions .profil-link-home {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.profil-actions .profil-link-home:hover {
+  color: var(--coral);
+}

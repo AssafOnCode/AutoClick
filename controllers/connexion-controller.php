@@ -20,6 +20,7 @@ if(isset($user['email']) && isset($user['password']))
         $_SESSION['type'] = $user['type'];
         $_SESSION['id'] = $user['id'];
         $_SESSION['photo'] = $user['photo'];
+        var_dump($_SESSION); exit;
 
        header('Location: ../views/pages/home.php');
        
