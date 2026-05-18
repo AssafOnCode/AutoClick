@@ -84,7 +84,7 @@ $id = $_SESSION['id'];
 
             <li>
                 <a
-                    href="modifier.php"
+                    href="modifierprofil.php"
                     class="profil-btn profil-btn--danger"
                 >
                     Modifier mon profil
@@ -93,7 +93,7 @@ $id = $_SESSION['id'];
 
             <li>
                 <a
-                    href="supprimer.php"
+                    href="supprimerprofil.php"
                     class="profil-btn profil-btn--primary"
                 >
                     Supprimer mon compte
@@ -102,7 +102,7 @@ $id = $_SESSION['id'];
 
             <li>
                 <a
-                    href="deconnexion.php"
+                    href="deconnexionprofil.php"
                     class="profil-btn profil-btn--ghost"
                 >
                     Se déconnecter
