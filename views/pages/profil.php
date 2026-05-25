@@ -102,7 +102,7 @@ $id = $_SESSION['id'];
 
             <li>
                 <a
-                    href="deconnexionprofil.php"
+                    href="deconnexion.php"
                     class="profil-btn profil-btn--ghost"
                 >
                     Se déconnecter

@@ -38,6 +38,46 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.auth-flash {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  max-width: min(22rem, calc(100vw - 2rem));
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+  box-shadow: 0 8px 28px rgba(45, 45, 45, 0.12), 0 2px 6px rgba(45, 45, 45, 0.06);
+  animation: auth-flash-in 0.35s ease;
+}
+
+@keyframes auth-flash-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-flash--disconnect {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid rgba(4, 120, 87, 0.28);
+}
+
+.auth-flash--signup {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid rgba(180, 83, 9, 0.25);
+}
+
 .auth-layout {
   width: 100%;
   max-width: 420px;

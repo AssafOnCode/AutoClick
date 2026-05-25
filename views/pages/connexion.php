@@ -9,11 +9,17 @@
 
 <body class="auth-page">
 
-<?php
-if (isset($_GET['inscription'])) {
-    echo 'vous etes inscrit';
-}
-?>
+<?php if (isset($_GET['deconnexion'])): ?>
+    <div class="auth-flash auth-flash--disconnect" role="status">
+        Vous avez bien été déconnecté.
+    </div>
+<?php endif; ?>
+
+<?php if (isset($_GET['inscription'])): ?>
+    <div class="auth-flash auth-flash--signup" role="status">
+        Inscription réussie — vous pouvez vous connecter.
+    </div>
+<?php endif; ?>
 
     <div class="auth-layout">
         <header class="auth-brand">
