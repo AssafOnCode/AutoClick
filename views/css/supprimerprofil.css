@@ -1,0 +1,162 @@
+/* Page suppression de compte — même charte que home (variables :root dans home.css) */
+
+.supprimer-main {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.supprimer-panel {
+  width: 100%;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 2rem 1.75rem 2.1rem;
+  text-align: center;
+}
+
+.supprimer-panel__visual {
+  margin-bottom: 1.25rem;
+}
+
+.supprimer-panel__icon-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.22);
+}
+
+.supprimer-panel__icon {
+  display: block;
+}
+
+.supprimer-panel__title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.35rem, 3.5vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
+}
+
+.supprimer-panel__lead {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.supprimer-panel__warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.75rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid rgba(185, 28, 28, 0.25);
+}
+
+.supprimer-panel__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.supprimer-panel__form {
+  margin: 0;
+}
+
+.supprimer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  padding: 0.65rem 1.2rem;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.supprimer-btn:hover {
+  transform: translateY(-1px);
+}
+
+.supprimer-btn:active {
+  transform: translateY(0);
+}
+
+.supprimer-btn:focus-visible {
+  outline: none;
+}
+
+.supprimer-btn--confirm {
+  color: #fff;
+  background: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%);
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.32);
+}
+
+.supprimer-btn--confirm:hover {
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.4);
+}
+
+.supprimer-btn--confirm:focus-visible {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25), 0 4px 16px rgba(220, 38, 38, 0.32);
+}
+
+.supprimer-btn--cancel {
+  color: var(--charcoal);
+  background: #fafbfc;
+  border-color: var(--border);
+  font-weight: 600;
+}
+
+.supprimer-btn--cancel:hover {
+  background: #fff;
+  border-color: #d1d5db;
+  color: var(--charcoal);
+}
+
+.supprimer-btn--cancel:focus-visible {
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.2);
+}
+
+@media (min-width: 480px) {
+  .supprimer-panel__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .supprimer-panel__form,
+  .supprimer-btn--cancel {
+    flex: 1 1 calc(50% - 0.33rem);
+    min-width: 150px;
+  }
+}
