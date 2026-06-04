@@ -5,12 +5,12 @@ $password = $_POST['password'];
 
 
 $bdd = new PDO('mysql:host=localhost;dbname=php_autoclick', 'root', 'root');
-$requete = $bdd->prepare('SELECT * FROM users WHERE email = :email AND password = :password');
-$requete->execute(['email' => $email ,'password' => $password]);
+$requete = $bdd->prepare('SELECT * FROM users WHERE email = :email');
+$requete->execute(['email' => $email]);
 $user = $requete->fetch();
 
 
-if(isset($user['email']) && isset($user['password']))
+if ($user && password_verify($password, $user['password'])) 
     {
         session_start();
         
