@@ -8,7 +8,6 @@
 <?php
 
 session_start();
-
 $firstname   = $_SESSION['first_name'];
 $lastname    = $_SESSION['last_name'];
 $number      = $_SESSION['number'];
@@ -24,7 +23,7 @@ $password    = $_SESSION['password'];
                 <input type="text" id="firstname" name="firstname" value="<?php echo htmlspecialchars($firstname); ?>" required>
         
                 <label for="lastname">lastname</label>
-                <input type="text" id="lastname" name="last_name" value="<?php echo htmlspecialchars($lastname); ?>" required>
+                <input type="text" id="lastname" name="lastname" value="<?php echo htmlspecialchars($lastname); ?>" required>
          
                 <label for="number">number</label>
                 <input type="text" id="number" name="number" value="<?php echo htmlspecialchars($number); ?>" required>

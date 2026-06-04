@@ -1,8 +1,13 @@
 <?php
 session_start();
 
+if (isset($_GET['modifprofil']))
+{
+    echo "Modification réussie !";
+}
 
-if (!isset($_SESSION['id']))
+
+if (!isset($_SESSION['id_user']))
 {
     header('Location: connexion.php');
     exit;
@@ -10,7 +15,6 @@ if (!isset($_SESSION['id']))
 
 
 $photo = $_SESSION['photo'] ?? '';
-$id = $_SESSION['id'];
 
 ?>
 

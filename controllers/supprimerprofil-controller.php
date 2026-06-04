@@ -2,12 +2,12 @@
 
 session_start();
 
-$id = $_SESSION['id'];
+$id_user = $_SESSION['id_user'];
 
 $bdd = new PDO('mysql:host=localhost;dbname=php_autoclick', 'root', 'root');
 
-$requete = "DELETE FROM users WHERE id_user = $id;";
-$bdd->query($requete);
+$requete = $bdd->prepare('DELETE FROM users WHERE id_user = :id_user');
+$requete->execute(['id_user' => $id_user]);
 
 session_destroy();
 

@@ -136,6 +136,40 @@
   padding: 2rem 1.25rem 3rem;
 }
 
+.profil-flash {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  max-width: min(22rem, calc(100vw - 2rem));
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+  box-shadow: 0 8px 28px rgba(26, 26, 30, 0.12), 0 2px 6px rgba(26, 26, 30, 0.06);
+  animation: profil-flash-in 0.35s ease;
+}
+
+@keyframes profil-flash-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profil-flash--ok {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid rgba(4, 120, 87, 0.28);
+}
+
 .profil-alert {
   padding: 0.85rem 1rem;
   border-radius: var(--radius-sm);
