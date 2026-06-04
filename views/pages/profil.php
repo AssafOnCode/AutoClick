@@ -1,19 +1,13 @@
 <?php
 session_start();
 
-if (isset($_GET['modifprofil']))
-{
-    echo "Modification réussie !";
-}
-
-
 if (!isset($_SESSION['id_user']))
 {
     header('Location: connexion.php');
     exit;
 }
 
-
+$modif_ok = isset($_GET['modifprofil']);
 $photo = $_SESSION['photo'] ?? '';
 
 ?>
@@ -32,6 +26,12 @@ $photo = $_SESSION['photo'] ?? '';
 <body class="home-page">
 
 <?php require __DIR__ . '/../includes/partials-navbar-home.php'; ?>
+
+<?php if ($modif_ok): ?>
+    <div class="profil-flash profil-flash--ok" role="status">
+        Vous avez bien été modifié.
+    </div>
+<?php endif; ?>
 
 <main class="profil-hub-main">
 

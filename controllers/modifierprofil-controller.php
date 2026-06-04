@@ -27,6 +27,11 @@ if (! isset($res['email'])) {
     WHERE id_user = :id_user ");
 
 $requeteupdate->execute(['first_name' => $firstname,'last_name' => $lastname,'number' => $number,'email' => $email,'password' => $password,'id_user' => $id_user]);
+$_SESSION['first_name'] = $firstname;
+$_SESSION['last_name'] = $lastname;
+$_SESSION['number'] = $number;
+$_SESSION['email'] = $email;
+$_SESSION['password'] = $password;
 header('Location: ../views/pages/profil.php?modifprofil=1');
 } else {
     echo "Cet email est déjà utilisé.";

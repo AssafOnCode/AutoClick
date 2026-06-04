@@ -82,6 +82,9 @@ $photo = $_SESSION['photo'] ?? '';
 
             <div class="services__grid">
                 <a class="service-card" id="occasion" href="vehiculesoccasions.php">
+                    <div class="service-card__media" aria-hidden="true">
+                        <img src="../../assets/occasion.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="service-card__icon" aria-hidden="true">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                     </div>
@@ -91,6 +94,9 @@ $photo = $_SESSION['photo'] ?? '';
                 </a>
 
                 <a class="service-card service-card--new" id="neufs" href="vehiculesneufs.php">
+                    <div class="service-card__media" aria-hidden="true">
+                        <img src="../../assets/neuf.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="service-card__icon" aria-hidden="true">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05"/><path d="M12 22.08V12"/></svg>
                     </div>
@@ -100,6 +106,9 @@ $photo = $_SESSION['photo'] ?? '';
                 </a>
 
                 <a class="service-card service-card--electric" id="electrique" href="electique.php">
+                    <div class="service-card__media" aria-hidden="true">
+                        <img src="../../assets/electrique.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="service-card__icon" aria-hidden="true">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                     </div>
@@ -109,6 +118,9 @@ $photo = $_SESSION['photo'] ?? '';
                 </a>
 
                 <a class="service-card service-card--sell" id="vendre" href="vendre.php">
+                    <div class="service-card__media" aria-hidden="true">
+                        <img src="../../assets/vendre.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="service-card__icon" aria-hidden="true">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.82 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg>
                     </div>
@@ -118,6 +130,9 @@ $photo = $_SESSION['photo'] ?? '';
                 </a>
 
                 <a class="service-card service-card--rent" id="location" href="location.php">
+                    <div class="service-card__media" aria-hidden="true">
+                        <img src="../../assets/location.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="service-card__icon" aria-hidden="true">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="3.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
                     </div>
@@ -127,6 +142,9 @@ $photo = $_SESSION['photo'] ?? '';
                 </a>
 
                 <a class="service-card" id="favoris" href="favoris.php">
+                    <div class="service-card__media" aria-hidden="true">
+                        <img src="../../assets/favoris.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="service-card__icon" aria-hidden="true">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
                     </div>
