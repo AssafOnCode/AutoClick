@@ -152,6 +152,18 @@ $photo = $_SESSION['photo'] ?? '';
                     <p>Retrouvez les annonces sauvegardées et comparez vos coups de cœur en un clin d’œil.</p>
                     <span class="service-card__link">Ouvrir mes favoris <span class="service-card__arrow" aria-hidden="true">→</span></span>
                 </a>
+
+                <a class="service-card service-card--pro" id="pro" href="pro.php">
+                    <div class="service-card__media" aria-hidden="true">
+                        <img src="../../assets/firstautoclick.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-card__icon" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h2>Espace Pro</h2>
+                    <p>Solutions dédiées aux professionnels : gestion de parc, achats en volume et services sur mesure.</p>
+                    <span class="service-card__link">Découvrir l’offre Pro <span class="service-card__arrow" aria-hidden="true">→</span></span>
+                </a>
             </div>
         </section>
     </main>
