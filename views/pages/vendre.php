@@ -193,5 +193,22 @@
 
 <?php require __DIR__ . '/../includes/partials-footer-home.php'; ?>
 
+
+<script>
+document.getElementById("type").onchange = function() {
+
+    if (this.value == "moto") {
+        document.getElementById("sieges").disabled = true;
+        document.getElementById("portes").disabled = true;
+    } else {
+        document.getElementById("sieges").disabled = false;
+        document.getElementById("portes").disabled = false;
+    }
+
+};
+</script>
+
+</body>
+</html>
 </body>
 </html>

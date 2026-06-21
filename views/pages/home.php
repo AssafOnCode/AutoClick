@@ -160,9 +160,17 @@ $photo = $_SESSION['photo'] ?? '';
                     <div class="service-card__icon" aria-hidden="true">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                     </div>
-                    <h2>Espace Pro</h2>
-                    <p>Solutions dédiées aux professionnels : gestion de parc, achats en volume et services sur mesure.</p>
-                    <span class="service-card__link">Découvrir l’offre Pro <span class="service-card__arrow" aria-hidden="true">→</span></span>
+                    <?php
+                        if ($type == 'pro') {
+                            echo '<h2>Espace Pro</h2>';
+                            echo '<p>Solutions dédiées aux professionnels : gestion de parc, achats en volume et services sur mesure.</p>';
+                            echo '<span class="service-card__link">Découvrir l’offre Pro <span class="service-card__arrow" aria-hidden="true">→</span></span>';
+                        } else {
+                            echo '<h2>Espace Particulier</h2>';
+                            echo '<p>Solutions dédiées aux particuliers : achat de véhicules d’occasion et neufs.</p>';
+                            echo '<span class="service-card__link">Découvrir l’offre Particulier <span class="service-card__arrow" aria-hidden="true">→</span></span>';
+                        }
+                    ?>
                 </a>
             </div>
         </section>
