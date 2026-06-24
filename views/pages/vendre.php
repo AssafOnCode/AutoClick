@@ -26,11 +26,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="titre">Titre de l’annonce</label>
-                        <input type="text" id="titre" name="titre" placeholder="BMW M3 Competition" required>
+                        <input type="text" id="titre" name="title" placeholder="BMW M3 Competition" required>
                     </div>
                     <div class="form-group">
                         <label for="plaque">Plaque d’immatriculation</label>
-                        <input type="text" id="plaque" name="plaque" placeholder="EV-752-DT" required>
+                        <input type="text" id="plaque" name="plaque" placeholder="AB-123-CD" maxlength="9" required>
                     </div>
                 </div>
 
@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-group">
                         <label for="marque">Marque</label>
-                        <select id="marque" name="marque" required>
+                        <select id="marque" name="brand" required>
                             <option value="" disabled selected>Choisir une marque…</option>
                             <option value="aprilia">Aprilia</option>
                             <option value="audi">Audi</option>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="form-group">
                         <label for="annee">Année</label>
-                        <input type="text" id="annee" name="annee" placeholder="2022" required>
+                        <input type="text" id="annee" name="year" placeholder="2022" required>
                     </div>
                 </div>
 
@@ -114,7 +114,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="energy">Énergie</label>
-                        <select id="energy" name="energy" required>
+                        <select id="energy" name="fuel" required>
                             <option value="" disabled selected>Choisir…</option>
                             <option value="essence">Essence</option>
                             <option value="diesel">Diesel</option>
@@ -129,7 +129,7 @@
                     </div>
                     <div class="form-group">
                         <label for="boite_de_vitesse">Boîte de vitesse</label>
-                        <select id="boite_de_vitesse" name="boite_de_vitesse" required>
+                        <select id="boite_de_vitesse" name="gearbox" required>
                             <option value="" disabled selected>Choisir…</option>
                             <option value="manuelle">Manuelle</option>
                             <option value="automatique">Automatique</option>
@@ -141,22 +141,40 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="kilometrage">Kilométrage</label>
-                        <input type="text" id="kilometrage" name="kilometrage" placeholder="45 000 km" required>
+                        <input type="text" id="kilometrage" name="mileage" placeholder="45 000 km" required>
                     </div>
                     <div class="form-group">
                         <label for="puissance_din">Puissance DIN</label>
-                        <input type="text" id="puissance_din" name="puissance_din" placeholder="500 ch" required>
+                        <input type="text" id="puissance_din" name="horsepower" placeholder="500 ch" required>
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
+                <div class="form-group">
                         <label for="sieges">Sièges</label>
-                        <input type="text" id="sieges" name="sieges" placeholder="5 places" required>
+                        <select id="sieges" name="seat" required>
+                            <option value="" disabled selected>Choisir…</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7_ou_plus">7 ou plus</option>
+                            
+                        </select>
                     </div>
+
                     <div class="form-group">
                         <label for="portes">Portes</label>
-                        <input type="text" id="portes" name="portes" placeholder="5 portes" required>
+                        <select id="portes" name="portes" required>
+                            <option value="" disabled selected>Choisir…</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7_ou_plus">7 ou plus</option>
+
+                        </select>
                     </div>
                 </div>
 
@@ -168,7 +186,7 @@
                     </div>
                     <div class="form-group">
                         <label for="prix">Prix</label>
-                        <input type="text" id="prix" name="prix" placeholder="10 000 €" required>
+                        <input type="text" id="prix" name="price" placeholder="10 000 €" required>
                     </div>
                 </div>
 
@@ -206,6 +224,23 @@ document.getElementById("type").onchange = function() {
     }
 
 };
+</script>
+
+<script>
+document.getElementById("plaque").addEventListener("input", function() {
+
+    let valeur = this.value.replace(/-/g, "");
+
+    if (valeur.length > 2) {
+        valeur = valeur.slice(0, 2) + "-" + valeur.slice(2);
+    }
+
+    if (valeur.length > 6) {
+        valeur = valeur.slice(0, 6) + "-" + valeur.slice(6);
+    }
+
+    this.value = valeur.toUpperCase();
+});
 </script>
 
 </body>
