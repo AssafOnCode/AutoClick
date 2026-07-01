@@ -20,7 +20,7 @@
                 <p class="profil-panel__lead">Décrivez votre véhicule en détail pour publier une annonce claire et attractive.</p>
             </header>
 
-            <form class="profil-form vendre-form" action="../../controllers/vendre-controller.php" method="POST" enctype="multipart/form-data" autocomplete="on">
+            <form class="profil-form vendre-form" action="../../controllers/vendre-controllers.php" method="POST" enctype="multipart/form-data" autocomplete="on">
 
                 <h2 class="vendre-section">Informations principales</h2>
                 <div class="form-row">
@@ -106,7 +106,7 @@
                     </div>
                     <div class="form-group">
                         <label for="annee">Année</label>
-                        <input type="text" id="annee" name="year" placeholder="2022" required>
+                        <input type="text" id="annee" name="years" placeholder="2022" required>
                     </div>
                 </div>
 
@@ -151,7 +151,7 @@
 
                 <div class="form-group">
                         <label for="sieges">Sièges</label>
-                        <select id="sieges" name="seat" required>
+                        <select id="sieges" name="seats" required>
                             <option value="" disabled selected>Choisir…</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -165,7 +165,7 @@
 
                     <div class="form-group">
                         <label for="portes">Portes</label>
-                        <select id="portes" name="portes" required>
+                        <select id="portes" name="doors" required>
                             <option value="" disabled selected>Choisir…</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
